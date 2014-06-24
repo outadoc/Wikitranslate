@@ -50,10 +50,12 @@
 			}
 		}
 
-		if(page !== void 0) {
-			alert(page.title + " in " + getLanguageFromCode(page.langlinks[0].lang) + " is " + page.langlinks[0].title + ".");
-		} else {
+		if(page === void 0) {
 			alert("Could not find a Wikipedia page with that title.");
+		} else if(page.langlinks === void 0) {
+			alert("This page has no translation available in that language.");
+		} else {
+			alert(page.title + " in " + getLanguageFromCode(page.langlinks[0].lang) + " is " + page.langlinks[0].title + ".");
 		}
 	}
 
