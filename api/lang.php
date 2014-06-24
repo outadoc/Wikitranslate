@@ -20,7 +20,7 @@
 	 * @param string $category The name of the cache file.
 	 */
 	function saveCache($category, $content) {
-		file_put_contents(CACHE_DIRECTORY . $category, $content);
+		@file_put_contents(CACHE_DIRECTORY . $category, $content);
 	}
 
 	/**
